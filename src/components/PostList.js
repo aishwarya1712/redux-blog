@@ -1,13 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
-import {fetchPosts} from '../actions'
+import { fetchPostsAndUsers } from '../actions'
 import UserHeader from "./UserHeader";
 
 class PostList extends React.Component{
     componentDidMount(){
         // action creator placed here, will make req to JSON placeholder api using axios
-        this.props.fetchPosts();
-        // this.props.fetchUsers(1);
+        this.props.fetchPostsAndUsers();
     }
 
     renderList() {
@@ -45,4 +44,4 @@ const mapStateToProps = (state) => {
 
 // mSTP is for reducers
 // {fetchPosts} is the action creator
-export default connect(mapStateToProps, {fetchPosts})(PostList);
+export default connect(mapStateToProps, {fetchPostsAndUsers})(PostList);
